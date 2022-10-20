@@ -1,0 +1,67 @@
+/* Sizes */
+
+$padder-width: 1280px;
+
+$header-height: 75px;
+$header-height-mobile: 60px;
+$header-teaser-height: 28px;
+$teaser-height: 38px;
+
+/* Breakpoints */
+
+$menu-show-width: 880px;
+$trustpilot-header-show-width: 800px; // Linked with header.component.scss TRUSTPILOT_HEADER_SHOW_WIDTH
+$long-teaser-show-width: 700px;
+$configurator-column-breakpoint: 700px; // Linked with creator-preview-floater.component.ts CONFIGURATOR_COLUMN_BREAKPOINT
+$absolute-min-width: 200px;
+
+/* Colors */
+
+$bubbly-black: #252530;
+$bubbly-font: apertura, sans-serif;
+$bubbly-focus-red: #c22d1d;
+$bubbly-blue: #14a2be;
+$bubbly-lightblue: #5ac0d4;
+$bubbly-faintblue: #e0f0e5;
+
+$primary-color: #ff9b71;
+$secondary-color: #20334e;
+
+$accent-color: #4dba61;
+$disabled-color: #c5bdb7;
+$neutral-color: white;
+
+$primary-soft-color: #fef2eb;
+$secondary-soft-color: #8f98a6;
+
+$primary-hover-color: darken($primary-color, 3%);
+$secondary-hover-color: darken($secondary-color, 10%);
+
+$primary-focus-color: #00ccff;
+$secondary-focus-color: #ec0579;
+
+/* Layout */
+
+$card-radius: 8px;
+
+/* Locale adjustments */
+
+$button-padding-top-adjustment: 3px;
+
+/* Mixins */
+
+@mixin hide-scrollbars {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin header-top-padding {
+  padding-top: 60px;
+
+  @media (min-width: $menu-show-width) {
+    padding-top: 75px;
+  }
+}
