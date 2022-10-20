@@ -4,9 +4,9 @@ import { LazyAngularModuleContext } from "../lib/lazy-angular-module-context";
 
 export function LazyAngularModuleContextProvider(props: {
   children: any;
-  moduleRefLoader: () => Promise<NgModuleRef<any>>;
+  moduleRefLoader: () => Promise<NgModuleRef<any> | "IS_SERVER">;
 }) {
-  const moduleRefPromiseRef = useRef<Promise<NgModuleRef<any>>>(null);
+  const moduleRefPromiseRef = useRef<Promise<NgModuleRef<any> | "IS_SERVER">>(null);
 
   const moduleRefLoader = props.moduleRefLoader;
 

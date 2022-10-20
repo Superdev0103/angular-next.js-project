@@ -1,4 +1,4 @@
-import React, { ReactNode, Suspense, useContext, useEffect, useMemo } from "react";
+import React, { ReactNode, Suspense, useContext, useEffect, useMemo, useState } from "react";
 import { AngularWrapperProps } from "./lazy-angular-wrapper";
 import SuspendingLazyAngularWrapperWithPromises from "./suspending-lazy-angular-wrapper-with-promises";
 import { LazyAngularModuleContext } from "../lib/lazy-angular-module-context";
@@ -9,7 +9,7 @@ export default function LazyAngularWrapperWithLoaders({
   ...props
 }: {
   componentLoader: () => Promise<any>;
-  fallback: ReactNode,
+  fallback: any,
 } & AngularWrapperProps) {
   const moduleRefLoader = useContext(LazyAngularModuleContext);
 
@@ -22,6 +22,7 @@ export default function LazyAngularWrapperWithLoaders({
       <SuspendingLazyAngularWrapperWithPromises
         componentPromise={componentPromise}
         moduleRefPromise={moduleRefPromise}
+        serverFallback={fallback}
         {...props}
       />
     </Suspense>

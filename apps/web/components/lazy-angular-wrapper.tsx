@@ -18,10 +18,8 @@ export function LazyAngularWrapper({
   ...props
 }: {
   componentLoader: () => Promise<any>;
-  fallback: React.ReactNode;
+  fallback: any;
 } & AngularWrapperProps) {
-  if (typeof window === "undefined") return <></>;
-
   return (
     <Suspense fallback={fallback}>
       <LazyAngularWrapperWithLoaders
