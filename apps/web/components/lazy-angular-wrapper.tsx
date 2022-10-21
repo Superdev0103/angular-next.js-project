@@ -7,8 +7,8 @@ export type AngularWrapperProps = Omit<
   "component"
 >;
 
-const LazyAngularWrapperWithLoaders = lazy(
-  () => import("./suspending-lazy-angular-wrapper-with-loaders")
+const SuspendingLazyAngularWrapper = lazy(
+  () => import("./suspending-lazy-angular-wrapper")
 );
 
 export default function LazyAngularWrapper({
@@ -21,7 +21,7 @@ export default function LazyAngularWrapper({
 } & AngularWrapperProps) {
   return (
     <Suspense fallback={fallback}>
-      <LazyAngularWrapperWithLoaders
+      <SuspendingLazyAngularWrapper
         fallback={fallback}
         componentLoader={componentLoader}
         {...props}

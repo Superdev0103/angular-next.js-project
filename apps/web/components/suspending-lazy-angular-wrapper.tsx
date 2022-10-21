@@ -3,7 +3,7 @@ import { AngularWrapperProps } from "./lazy-angular-wrapper";
 import SuspendingLazyAngularWrapperWithPromises from "./suspending-lazy-angular-wrapper-with-promises";
 import LazyAngularModuleContext from "../lib/lazy-angular-module-context";
 
-export default function LazyAngularWrapperWithLoaders({
+export default function SuspendingLazyAngularWrapper({
   componentLoader,
   fallback,
   ...props

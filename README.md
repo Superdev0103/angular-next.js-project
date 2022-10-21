@@ -2,7 +2,48 @@
 
 This is a demo to show a Next.js project which loads Angular components using [@bubblydoo/angular-react](https://github.com/bubblydoo/angular-react).
 
-It is configured to lazily load any Angular component.
+It is configured to lazily load any Angular component. Angular SSR is not supported, but fallbacks are rendered using Next.js SSR. The Angular components are rendered on the client-side only and use Suspense boundaries to be rendered.
+
+## Examples
+
+#### Loading an Angular component
+
+```tsx
+export default function Index() {
+  const componentLoader = useCallback(
+    () => import("angular-module/dist/demo").then((m) => m.DemoComponent),
+    []
+  );
+
+  return (
+    <LazyAngularWrapper
+      fallback={<div>Loading Angular Component...</div>}
+      componentLoader={componentLoader}
+    />
+  );
+}
+```
+
+#### Using an Angular Service in React
+
+```tsx
+import { useInjected, useObservable } from "@bubblydoo/angular-react";
+import { DemoService } from "angular-module/dist/demo";
+
+export default function AngularUsingComponent() {
+  const service = useInjected(DemoService);
+  const [value] = useObservable(service.value$);
+  return <div>{value}</div>;
+}
+
+export default function Index() {
+  return (
+    <ResolveAngularModuleContext fallback={<div>Loading Angular context...</div>}>
+      <AngularUsingComponent />
+    </ResolveAngularModuleContext>
+  );
+}
+```
 
 ## Troubleshooting
 
