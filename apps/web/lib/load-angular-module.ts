@@ -2,7 +2,7 @@ import type { NgModuleRef } from "@angular/core";
 
 const map = new WeakMap<any, Promise<NgModuleRef<any>>>();
 
-export function loadAngularModule(mod: any): Promise<NgModuleRef<any> | "IS_SERVER"> {
+export default function loadAngularModule(mod: any): Promise<NgModuleRef<any> | "IS_SERVER"> {
   if (typeof window === "undefined") {
     return Promise.resolve("IS_SERVER");
     // const moduleRefPromise = (async () => {

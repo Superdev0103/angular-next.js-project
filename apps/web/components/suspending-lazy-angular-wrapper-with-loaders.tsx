@@ -1,7 +1,7 @@
-import React, { ReactNode, Suspense, useContext, useEffect, useMemo, useState } from "react";
+import React, { Suspense, useContext, useMemo } from "react";
 import { AngularWrapperProps } from "./lazy-angular-wrapper";
 import SuspendingLazyAngularWrapperWithPromises from "./suspending-lazy-angular-wrapper-with-promises";
-import { LazyAngularModuleContext } from "../lib/lazy-angular-module-context";
+import LazyAngularModuleContext from "../lib/lazy-angular-module-context";
 
 export default function LazyAngularWrapperWithLoaders({
   componentLoader,

@@ -1,6 +1,6 @@
-import { NgModuleRef } from "@angular/core";
+import type { NgModuleRef } from "@angular/core";
 import { AngularWrapper, AngularWrapperWithModule } from "@bubblydoo/angular-react";
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { suspend } from "suspend-react";
 
 export default function SuspendingLazyAngularWrapperWithPromises({
@@ -24,9 +24,11 @@ export default function SuspendingLazyAngularWrapperWithPromises({
 
   if (!loaded || moduleRef === "IS_SERVER") return serverFallback;
 
-  return <AngularWrapperWithModule
-    component={component}
-    moduleRef={moduleRef}
-    {...props}
-  />
+  return (
+    <AngularWrapperWithModule
+      component={component}
+      moduleRef={moduleRef}
+      {...props}
+    />
+  );
 }

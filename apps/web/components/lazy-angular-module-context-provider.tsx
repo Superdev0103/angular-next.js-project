@@ -1,8 +1,8 @@
-import { NgModuleRef } from "@angular/core";
+import type { NgModuleRef } from "@angular/core";
 import { useRef, useCallback } from "react";
-import { LazyAngularModuleContext } from "../lib/lazy-angular-module-context";
+import LazyAngularModuleContext from "../lib/lazy-angular-module-context";
 
-export function LazyAngularModuleContextProvider(props: {
+export default function LazyAngularModuleContextProvider(props: {
   children: any;
   moduleRefLoader: () => Promise<NgModuleRef<any> | "IS_SERVER">;
 }) {

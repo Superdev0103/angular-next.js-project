@@ -1,18 +1,17 @@
-import { AngularWrapper } from "@bubblydoo/angular-react";
+import type { AngularWrapper } from "@bubblydoo/angular-react";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-// import LazyAngularWrapperWithLoaders from "./suspending-lazy-angular-wrapper.client";
+import { lazy, Suspense } from "react";
 
 export type AngularWrapperProps = Omit<
   Parameters<typeof AngularWrapper>[0],
   "component"
 >;
 
-const LazyAngularWrapperWithLoaders = dynamic(
+const LazyAngularWrapperWithLoaders = lazy(
   () => import("./suspending-lazy-angular-wrapper-with-loaders")
 );
 
-export function LazyAngularWrapper({
+export default function LazyAngularWrapper({
   componentLoader,
   fallback,
   ...props

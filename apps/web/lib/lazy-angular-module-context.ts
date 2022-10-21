@@ -1,4 +1,6 @@
-import { NgModuleRef } from "@angular/core";
+import type { NgModuleRef } from "@angular/core";
 import { createContext } from "react";
 
-export const LazyAngularModuleContext = createContext<() => Promise<NgModuleRef<any> | "IS_SERVER">>(null);
+const LazyAngularModuleContext = createContext<() => Promise<NgModuleRef<any> | "IS_SERVER">>(null);
+
+export default LazyAngularModuleContext;

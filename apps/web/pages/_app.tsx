@@ -1,6 +1,6 @@
-import { LazyAngularModuleContextProvider } from "../components/lazy-angular-module-context-provider";
+import LazyAngularModuleContextProvider from "../components/lazy-angular-module-context-provider";
 import configureZonejs from "../lib/configure-zonejs";
-import { loadAngularModule } from "../lib/load-angular-module";
+import loadAngularModule from "../lib/load-angular-module";
 
 import '../styles/globals.css'
 
