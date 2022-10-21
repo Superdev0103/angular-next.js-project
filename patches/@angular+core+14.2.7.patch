@@ -1,0 +1,13 @@
+diff --git a/node_modules/@angular/core/fesm2015/core.mjs b/node_modules/@angular/core/fesm2015/core.mjs
+index 8646bf1..ae16a0b 100755
+--- a/node_modules/@angular/core/fesm2015/core.mjs
++++ b/node_modules/@angular/core/fesm2015/core.mjs
+@@ -5,7 +5,7 @@
+  */
+ 
+ import { Subject, Subscription, Observable, merge as merge$1 } from 'rxjs';
+-import { share } from 'rxjs/operators';
++import { share } from 'rxjs/operators/index.js';
+ 
+ /**
+  * @license
