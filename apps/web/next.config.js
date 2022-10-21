@@ -35,6 +35,7 @@ const nextJsConfig = {
     esmExternals: 'loose'
   },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    if (!global.angularCompilerCliLinkerPlugin) throw new Error("No linker plugin available");
     config.resolveLoader.symlinks = false
     config.module.rules.push({
       // Make sure this doesn't disable built in css support from Next.js
