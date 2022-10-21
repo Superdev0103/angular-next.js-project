@@ -4,6 +4,7 @@ import ResolveAngularModuleContext from "../components/resolve-angular-module-co
 import LazyAngularWrapper from "../components/lazy-angular-wrapper";
 import AngularUsingComponent from "../components/angular-using-component";
 import { AngularModuleContext } from "@bubblydoo/angular-react";
+import OptionalAngularUsingComponent from "../components/optional-angular-using-component";
 
 export default function Index() {
   const componentLoader = useCallback(
@@ -14,7 +15,7 @@ export default function Index() {
   return (
     <>
       <h1>Next.js with Angular Demo</h1>
-      <ResolveAngularModuleContext fallback={<div>Loading Angular context...</div>}>
+      <ResolveAngularModuleContext fallback={<p>Loading Angular context...</p>}>
         <AngularUsingComponent />
         <AngularModuleContext.Consumer>
           {(moduleRef) => (
@@ -23,9 +24,10 @@ export default function Index() {
         </AngularModuleContext.Consumer>
       </ResolveAngularModuleContext>
       <LazyAngularWrapper
-        fallback={<div>Loading Angular Component...</div>}
+        fallback={<p>Loading Angular Component...</p>}
         componentLoader={componentLoader}
       />
+      <OptionalAngularUsingComponent />
     </>
   );
 }
