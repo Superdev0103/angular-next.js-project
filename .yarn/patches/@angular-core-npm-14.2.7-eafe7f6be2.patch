@@ -1,0 +1,13 @@
+diff --git a/fesm2020/core.mjs b/fesm2020/core.mjs
+index f18a341f809b122e8fad2408dda3ffd67d4dd471..cd421ebd0fbedb4b877ff64130647b67477a786f 100755
+--- a/fesm2020/core.mjs
++++ b/fesm2020/core.mjs
+@@ -5,7 +5,7 @@
+  */
+ 
+ import { Subject, Subscription, Observable, merge as merge$1 } from 'rxjs';
+-import { share } from 'rxjs/operators';
++import { share } from 'rxjs/operators/index.js';
+ 
+ /**
+  * @license
