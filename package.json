@@ -22,6 +22,6 @@
   },
   "packageManager": "yarn@3.3.1",
   "resolutions": {
-    "@angular/core@~14.2.0": "patch:@angular/core@npm%3A14.2.7#./.yarn/patches/@angular-core-npm-14.2.7-eafe7f6be2.patch"
+    "@angular/core@~14.2.0": "patch:@angular/core@npm%3A14.2.12#./.yarn/patches/@angular-core-npm-14.2.12-c19f80c50b.patch"
   }
 }
