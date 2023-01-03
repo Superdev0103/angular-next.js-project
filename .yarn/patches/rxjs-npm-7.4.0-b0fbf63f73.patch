@@ -1,0 +1,16 @@
+diff --git a/package.json b/package.json
+index b88902650e76dbba117a9b76877e49ea0eeb4f0c..61efe0da002f3869d23de91e773fdce0539f8c2b 100644
+--- a/package.json
++++ b/package.json
+@@ -35,6 +35,11 @@
+       "es2015": "./dist/esm/operators/index.js",
+       "default": "./dist/esm5/operators/index.js"
+     },
++    "./operators/index.js": {
++      "node": "./dist/cjs/operators/index.js",
++      "es2015": "./dist/esm/operators/index.js",
++      "default": "./dist/esm5/operators/index.js"
++    },
+     "./testing": {
+       "node": "./dist/cjs/testing/index.js",
+       "es2015": "./dist/esm/testing/index.js",

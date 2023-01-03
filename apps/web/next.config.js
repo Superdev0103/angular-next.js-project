@@ -1,12 +1,3 @@
-const withTM = require("next-transpile-modules")([
-  "angular-module",
-  "@angular/core",
-  "@angular/platform-browser",
-  "@angular/common",
-  "@angular/router",
-  "@angular/forms",
-  "@angular/animations"
-]);
 const withBundleAnalyzer = require('@next/bundle-analyzer')({ enabled: false });
 const webpack = require('webpack');
 
@@ -18,6 +9,15 @@ const webpack = require('webpack');
 /** @type {import('next').NextConfig} */
 const nextJsConfig = {
   reactStrictMode: true,
+  transpilePackages: [
+    "angular-module",
+    "@angular/core",
+    "@angular/platform-browser",
+    "@angular/common",
+    "@angular/router",
+    "@angular/forms",
+    "@angular/animations"
+  ],
   experimental: {
     runtime: 'experimental-edge',
     esmExternals: 'loose'
@@ -46,4 +46,4 @@ const nextJsConfig = {
   }
 }
 
-module.exports = withBundleAnalyzer(withTM(nextJsConfig));
+module.exports = withBundleAnalyzer(nextJsConfig);

@@ -22,6 +22,8 @@
   },
   "packageManager": "yarn@3.3.1",
   "resolutions": {
-    "@angular/core@~14.2.0": "patch:@angular/core@npm%3A14.2.12#./.yarn/patches/@angular-core-npm-14.2.12-c19f80c50b.patch"
+    "rxjs@~7.4.0": "patch:rxjs@npm%3A7.4.0#./.yarn/patches/rxjs-npm-7.4.0-b0fbf63f73.patch",
+    "rxjs@^7.5.5": "patch:rxjs@npm%3A7.4.0#./.yarn/patches/rxjs-npm-7.4.0-b0fbf63f73.patch",
+    "rxjs@6.6.7": "patch:rxjs@npm%3A7.4.0#./.yarn/patches/rxjs-npm-7.4.0-b0fbf63f73.patch"
   }
 }
